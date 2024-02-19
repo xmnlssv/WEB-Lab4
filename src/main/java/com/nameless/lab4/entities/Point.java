@@ -19,6 +19,8 @@ public class Point implements Serializable {
 
     private Double r;
 
+    private boolean result;
+
     @Column(name = "time")
     private Instant timestamp;
 

@@ -30,14 +30,6 @@ public class Point implements Serializable {
     public Point() {
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setX(Double x) {
-        this.x = x;
-    }
-
     public Point(Integer id, Double x, Double y, Double r, Instant timestamp, Integer userId) {
         this.id = id;
         this.x = x;
@@ -47,12 +39,48 @@ public class Point implements Serializable {
         this.userId = userId;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public Double getX() {
+        return x;
+    }
+
+    public Double getY() {
+        return y;
+    }
+
+    public Double getR() {
+        return r;
+    }
+
+    public boolean isResult() {
+        return result;
+    }
+
+    public Instant getTimestamp() {
+        return timestamp;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setX(Double x) {
+        this.x = x;
+    }
+
     public void setY(Double y) {
         this.y = y;
     }
 
     public void setR(Double r) {
         this.r = r;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
     }
 
     public void setTimestamp(Instant timestamp) {

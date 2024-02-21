@@ -4,7 +4,7 @@ import com.nameless.lab4.entities.PointEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AreaChecker {
+public class AreaCheckerService {
 
     public boolean pointInArea(PointEntity point) {
         return checkArea(point.getX(), point.getY(), point.getR());

@@ -3,7 +3,9 @@ package com.nameless.lab4.dto;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 
+@Data
 public class PointRequestDTO {
 
     @NotNull
@@ -22,5 +24,5 @@ public class PointRequestDTO {
     private Double r;
 
     @NotNull
-    private String currentTime;
+    private Integer executionTime;
 }

@@ -30,5 +30,5 @@ public class PointResponseDTO {
     private String currentTime;
 
     @NotNull
-    private Integer executionTime;
+    private Long executionTime;
 }

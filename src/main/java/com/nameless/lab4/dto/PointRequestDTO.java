@@ -3,12 +3,8 @@ package com.nameless.lab4.dto;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
 
-@Data
-public class PointDTO {
-
-    private Integer id;
+public class PointRequestDTO {
 
     @NotNull
     @Min(value = -5, message = "Min value for X is -5")
@@ -25,9 +21,6 @@ public class PointDTO {
     @Max(value = 3, message = "Max value for R is 3")
     private Double r;
 
-    private String result;
-
+    @NotNull
     private String currentTime;
-
-    private int executionTime;
 }

@@ -22,7 +22,4 @@ public class PointRequestDTO {
     @Min(value = 0, message = "Min value for R is 0+")
     @Max(value = 3, message = "Max value for R is 3")
     private Double r;
-
-    @NotNull
-    private Integer executionTime;
 }

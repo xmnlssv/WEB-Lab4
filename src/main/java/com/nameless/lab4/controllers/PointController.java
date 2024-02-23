@@ -1,7 +1,8 @@
 package com.nameless.lab4.controllers;
 
-import com.nameless.lab4.entities.Point;
-import com.nameless.lab4.repositories.PointRepository;
+import com.nameless.lab4.dto.PointRequestDTO;
+import com.nameless.lab4.dto.PointResponseDTO;
+import com.nameless.lab4.entities.PointEntity;
 import com.nameless.lab4.services.PointService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,7 @@ import java.util.List;
 @RequestMapping("/api/points")
 public class PointController {
 
-    private PointService pointService;
+    private final PointService pointService;
 
     @Autowired
     public PointController(PointService pointService) {
@@ -20,17 +21,17 @@ public class PointController {
     }
 
     @GetMapping
-    public List<Point> findAll() {
+    public List<PointResponseDTO> findAll() {
         return pointService.findAllPoints();
     }
 
     @PostMapping
-    public Point add(@RequestBody Point point) {
-        return pointService.checkAndSavePoint(point);
+    public PointResponseDTO addPoint(@RequestBody PointRequestDTO pointRequestDTO) {
+        return pointService.addPoint(pointRequestDTO);
     }
 
     @DeleteMapping
-    public void deleteAll() {
+    public void deleteAllPoints() {
         pointService.deletePoints();
     }
 }

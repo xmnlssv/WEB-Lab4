@@ -8,7 +8,6 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Getter
 @Setter
@@ -38,12 +37,7 @@ public class PointEntity implements Serializable {
     private LocalDateTime currentTime;
 
     @Column(name = "execution_time")
-    private Integer executionTime;
-
-    public String getFormattedCurrentTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        return currentTime.format(formatter);
-    }
+    private Long executionTime;
 
     public String getFormattedIsArea() {
         return result ? "true" : "false";

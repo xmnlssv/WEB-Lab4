@@ -1,41 +1,53 @@
 package com.nameless.lab4.utils;
 
-import com.nameless.lab4.dto.PointDTO;
+import com.nameless.lab4.dto.PointRequestDTO;
+import com.nameless.lab4.dto.PointResponseDTO;
 import com.nameless.lab4.entities.PointEntity;
+import com.nameless.lab4.services.AreaCheckerService;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
 
 @Service
 public class PointMapper {
 
-    public PointDTO mapToPointDTO(PointEntity point){
-        PointDTO dto = new PointDTO();
-        dto.setId(point.getId());
+    private final AreaCheckerService areaCheckerService;
+
+    public PointMapper(AreaCheckerService areaCheckerService) {
+        this.areaCheckerService = areaCheckerService;
+    }
+
+    public PointResponseDTO mapToPointDTO(PointEntity point) {
+        PointResponseDTO dto = new PointResponseDTO();
         dto.setX(point.getX());
         dto.setY(point.getY());
         dto.setR(point.getR());
+
+        point.setResult(areaCheckerService.pointInArea(point));
         dto.setResult(point.getFormattedIsArea());
-        dto.setCurrentTime(point.getFormattedCurrentTime());
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        dto.setCurrentTime(point.getCurrentTime().format(formatter));
+
         dto.setExecutionTime(point.getExecutionTime());
         return dto;
     }
 
-    public PointEntity mapToPointEntity(PointDTO dto){
+    public PointEntity mapToPointEntity(PointRequestDTO dto) {
+
 
         PointEntity point = new PointEntity();
-        point.setId(dto.getId());
         point.setX(dto.getX());
         point.setY(dto.getY());
         point.setR(dto.getR());
-        point.setResult(Boolean.parseBoolean(dto.getResult()));
+        point.setResult(areaCheckerService.pointInArea(point));
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        if (dto.getCurrentTime() != null && !dto.getCurrentTime().isEmpty()) {
-            point.setCurrentTime(LocalDateTime.parse(dto.getCurrentTime(), formatter));
-        }
+        LocalDateTime currentTime = LocalDateTime.now();
+        point.setCurrentTime(currentTime);
 
-        point.setExecutionTime(dto.getExecutionTime());
+        point.setExecutionTime(areaCheckerService.getExecutionTimeMillis());
 
         return point;
     }

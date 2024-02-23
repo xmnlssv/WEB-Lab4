@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class PointDTO {
+public class PointResponseDTO {
 
     @NotNull
     @Min(value = -5, message = "Min value for X is -5")
@@ -30,5 +30,5 @@ public class PointDTO {
     private String currentTime;
 
     @NotNull
-    private int executionTime;
+    private Integer executionTime;
 }

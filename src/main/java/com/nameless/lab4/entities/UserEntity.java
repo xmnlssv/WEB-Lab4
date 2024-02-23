@@ -32,7 +32,7 @@ public class UserEntity implements Serializable, UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList(); // Пользователи не имеют ролей
+        return Collections.emptyList();
     }
 
     @Override

@@ -8,18 +8,18 @@ import lombok.Data;
 @Data
 public class PointRequestDTO {
 
-    @NotNull
-    @Min(value = -5, message = "Min value for X is -5")
-    @Max(value = 5, message = "Max value for X is 3")
+    @NotNull(message = "Значение X не может быть пустым")
+    @Min(value = -5, message = "Минимальное значение для X — -5")
+    @Max(value = 5, message = "Максимальное значение для X — 5")
     private Double x;
 
-    @NotNull
-    @Min(value = -5, message = "Min value for Y is -5")
-    @Max(value = 3, message = "Max value for Y is 3")
+    @NotNull(message = "Значение Y не может быть пустым")
+    @Min(value = -5, message = "Минимальное значение для Y — -5")
+    @Max(value = 3, message = "Максимальное значение для Y — 3")
     private Double y;
 
-    @NotNull
-    @Min(value = 0, message = "Min value for R is 0+")
-    @Max(value = 3, message = "Max value for R is 3")
+    @NotNull(message = "Значение R не может быть пустым")
+    @Min(value = 0, message = "Минимальное значение для R — 0+")
+    @Max(value = 3, message = "Максимальное значение для R — 3")
     private Double r;
 }

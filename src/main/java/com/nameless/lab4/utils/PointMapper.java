@@ -1,16 +1,15 @@
 package com.nameless.lab4.utils;
 
-import com.nameless.lab4.dto.PointRequestDTO;
-import com.nameless.lab4.dto.PointResponseDTO;
+import com.nameless.lab4.dto.PointRequest;
+import com.nameless.lab4.dto.PointResponse;
 import com.nameless.lab4.entities.PointEntity;
 import com.nameless.lab4.services.AreaCheckerService;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-
-@Service
+@Component
 public class PointMapper {
 
     private final AreaCheckerService areaCheckerService;
@@ -19,8 +18,9 @@ public class PointMapper {
         this.areaCheckerService = areaCheckerService;
     }
 
-    public PointResponseDTO mapToPointDTO(PointEntity point) {
-        PointResponseDTO dto = new PointResponseDTO();
+    public PointResponse mapToPointDTO(PointEntity point) {
+
+        PointResponse dto = new PointResponse();
         dto.setX(point.getX());
         dto.setY(point.getY());
         dto.setR(point.getR());
@@ -35,8 +35,7 @@ public class PointMapper {
         return dto;
     }
 
-    public PointEntity mapToPointEntity(PointRequestDTO dto) {
-
+    public PointEntity mapToPointEntity(PointRequest dto) {
 
         PointEntity point = new PointEntity();
         point.setX(dto.getX());

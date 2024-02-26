@@ -1,7 +1,7 @@
 package com.nameless.lab4.services;
 
-import com.nameless.lab4.dto.PointRequestDTO;
-import com.nameless.lab4.dto.PointResponseDTO;
+import com.nameless.lab4.dto.PointRequest;
+import com.nameless.lab4.dto.PointResponse;
 import com.nameless.lab4.entities.PointEntity;
 import com.nameless.lab4.repositories.PointRepository;
 import com.nameless.lab4.utils.PointMapper;
@@ -23,13 +23,13 @@ public class PointService {
         this.pointMapper = pointMapper;
     }
 
-    public List<PointResponseDTO> findAllPoints() {
+    public List<PointResponse> findAllPoints() {
         return pointRepository.findAll().stream()
                 .map(pointMapper::mapToPointDTO)
                 .collect(Collectors.toList());
     }
 
-    public PointResponseDTO addPoint(PointRequestDTO pointRequestDTO) {
+    public PointResponse addPoint(PointRequest pointRequestDTO) {
         PointEntity pointEntity = pointMapper.mapToPointEntity(pointRequestDTO);
         PointEntity savedPoint = pointRepository.save(pointEntity);
         return pointMapper.mapToPointDTO(savedPoint);

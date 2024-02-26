@@ -1,8 +1,7 @@
 package com.nameless.lab4.controllers;
 
-import com.nameless.lab4.dto.PointRequestDTO;
-import com.nameless.lab4.dto.PointResponseDTO;
-import com.nameless.lab4.entities.PointEntity;
+import com.nameless.lab4.dto.PointRequest;
+import com.nameless.lab4.dto.PointResponse;
 import com.nameless.lab4.services.PointService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +20,12 @@ public class PointController {
     }
 
     @GetMapping
-    public List<PointResponseDTO> findAll() {
+    public List<PointResponse> findAll() {
         return pointService.findAllPoints();
     }
 
     @PostMapping
-    public PointResponseDTO addPoint(@RequestBody PointRequestDTO pointRequestDTO) {
+    public PointResponse addPoint(@RequestBody PointRequest pointRequestDTO) {
         return pointService.addPoint(pointRequestDTO);
     }
 

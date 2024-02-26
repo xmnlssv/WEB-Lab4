@@ -8,7 +8,6 @@ public class AreaCheckerService {
 
     private long executionTimeMillis;
 
-
     public boolean pointInArea(PointEntity point) {
         long startTime = System.nanoTime();
         boolean result = checkArea(point.getX(), point.getY(), point.getR());
@@ -28,7 +27,7 @@ public class AreaCheckerService {
 
     // Second quarter
     private boolean checkTriangle(Double x, Double y, Double r) {
-        return ((x <= 0 && y >= 0 && x >= -r && y <= x + r ));
+        return ((x <= 0 && y >= 0 && x >= -r && y <= x + r));
     }
 
     // Four quarter

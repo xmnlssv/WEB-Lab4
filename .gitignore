@@ -34,4 +34,4 @@ build/
 .vscode/
 
 ### Custom ###
-!**/src/main/recources/application.yaml
+/src/main/resources/application.yaml

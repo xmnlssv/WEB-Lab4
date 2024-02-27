@@ -34,4 +34,4 @@ build/
 .vscode/
 
 ### Custom ###
-!**/src/main/java/com/nameless/lab4/application.yaml
+!**/src/main/recources/application.yaml

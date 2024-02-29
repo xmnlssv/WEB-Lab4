@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class PointRequestDTO {
+public class PointRequest {
 
     @NotNull(message = "Значение X не может быть пустым")
     @Min(value = -5, message = "Минимальное значение для X — -5")

@@ -33,7 +33,7 @@ public class PointEntity implements Serializable {
     @Column(name = "result")
     private Boolean result;
 
-    @Column(name = "current_time")
+    @Column(name = "curr_time")
     private LocalDateTime currentTime;
 
     @Column(name = "execution_time")

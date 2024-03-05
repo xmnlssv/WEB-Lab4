@@ -33,11 +33,15 @@ public class PointEntity implements Serializable {
     @Column(name = "result")
     private Boolean result;
 
-    @Column(name = "curr_time")
+    @Column(name = "current_time")
     private LocalDateTime currentTime;
 
     @Column(name = "execution_time")
     private Long executionTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserEntity userId;
 
     public String getFormattedIsArea() {
         return result ? "true" : "false";

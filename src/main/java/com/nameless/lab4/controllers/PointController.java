@@ -4,6 +4,7 @@ import com.nameless.lab4.dto.PointRequest;
 import com.nameless.lab4.dto.PointResponse;
 import com.nameless.lab4.services.PointService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,17 +21,17 @@ public class PointController {
     }
 
     @GetMapping
-    public List<PointResponse> findAll() {
-        return pointService.findAllPoints();
+    public List<PointResponse> findAll(Authentication authentication) {
+        return pointService.findAllPoints(authentication.getName());
     }
 
     @PostMapping
-    public PointResponse addPoint(@RequestBody PointRequest pointRequestDTO) {
-        return pointService.addPoint(pointRequestDTO);
+    public PointResponse addPoint(@RequestBody PointRequest pointRequestDTO, Authentication authentication) {
+        return pointService.addPoint(pointRequestDTO, authentication.getName());
     }
 
     @DeleteMapping
-    public void deleteAllPoints() {
-        pointService.deletePoints();
+    public void deleteAllPoints(Authentication authentication) {
+        pointService.deletePoints(authentication.getName());
     }
 }

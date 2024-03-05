@@ -1,18 +1,20 @@
 package com.nameless.lab4.services;
 
 import com.nameless.lab4.entities.PointEntity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class AreaCheckerService {
 
-    private long executionTimeMillis;
+    private double executionTimeMillis;
 
     public boolean pointInArea(PointEntity point) {
-        long startTime = System.nanoTime();
+        double startTime = System.nanoTime();
         boolean result = checkArea(point.getX(), point.getY(), point.getR());
-        long endTime = System.nanoTime();
-        executionTimeMillis = (endTime - startTime) / 1_000_000;
+        double endTime = System.nanoTime();
+        executionTimeMillis = (endTime - startTime) / 1000000;
         return result;
     }
 
@@ -35,7 +37,7 @@ public class AreaCheckerService {
         return ((x >= 0) && (y <= 0) && (Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r, 2)));
     }
 
-    public long getExecutionTimeMillis() {
+    public double getExecutionTimeMillis() {
         return executionTimeMillis;
     }
 }

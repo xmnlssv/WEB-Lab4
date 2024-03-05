@@ -30,5 +30,5 @@ public class PointResponse {
     private String currentTime;
 
     @NotNull
-    private Long executionTime;
+    private Double executionTime;
 }

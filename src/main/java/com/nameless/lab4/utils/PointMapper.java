@@ -11,7 +11,6 @@ import java.time.format.DateTimeFormatter;
 
 @Component
 public class PointMapper {
-
     private final AreaCheckerService areaCheckerService;
 
     public PointMapper(AreaCheckerService areaCheckerService) {
@@ -19,14 +18,13 @@ public class PointMapper {
     }
 
     public PointResponse mapToPointDTO(PointEntity point) {
-
         PointResponse dto = new PointResponse();
         dto.setX(point.getX());
         dto.setY(point.getY());
         dto.setR(point.getR());
 
         point.setResult(areaCheckerService.pointInArea(point));
-        dto.setResult(point.getFormattedIsArea());
+        dto.setResult(point.getResult() ? "true" : "false");
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         dto.setCurrentTime(point.getCurrentTime().format(formatter));
@@ -36,7 +34,6 @@ public class PointMapper {
     }
 
     public PointEntity mapToPointEntity(PointRequest dto) {
-
         PointEntity point = new PointEntity();
         point.setX(dto.getX());
         point.setY(dto.getY());

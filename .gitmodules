@@ -1,0 +1,3 @@
+[submodule "webLab4_front"]
+	path = webLab4_front
+	url = git@github.com:viladit/webLab4_front.git

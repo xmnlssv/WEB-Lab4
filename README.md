@@ -6,8 +6,8 @@
 [![Made with: Spring](https://img.shields.io/badge/Spring-white?style=for-the-badge&logo=spring&logoColor=6DB33F)](https://rubyonrails.org/)
 [![Made with: Spring Boot](https://img.shields.io/badge/Spring%20Boot-white?style=for-the-badge&logo=springboot&logoColor=6DB33F)](https://rubyonrails.org/)
 [![Made with: Spring Security](https://img.shields.io/badge/Spring%20Security-white?style=for-the-badge&logo=springsecurity&logoColor=6DB33F)](https://rubyonrails.org/) 
-[![Made with: Spring MVC](https://img.shields.io/badge/Spring%20MVC-white?style=for-the-badge&logo=spring&logoColor=6DB33F)](https://spring.io/guides/gs/serving-web-content/)
-[![Made with: Java](https://img.shields.io/badge/Java-176579?style=for-the-badge&logo=coffeescript&logoColor=E78A2A)](https://www.ruby-lang.org/) \
+[![Made with: Spring MVC](https://img.shields.io/badge/Spring%20MVC-white?style=for-the-badge&logo=spring&logoColor=6DB33F)](https://spring.io/guides/gs/serving-web-content/) \
+[![Made with: Java](https://img.shields.io/badge/Java-176579?style=for-the-badge&logo=coffeescript&logoColor=E78A2A)](https://www.ruby-lang.org/) 
 [![Made with: PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://rubyonrails.org/)
 [![Made with: Vue.js](https://img.shields.io/badge/Vue.js-11C38C?style=for-the-badge&logo=vue.js&logoColor=2F465A)](https://rubyonrails.org/)
 

@@ -11,7 +11,7 @@
 [![Made with: PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://rubyonrails.org/)
 [![Made with: Vue.js](https://img.shields.io/badge/Vue.js-11C38C?style=for-the-badge&logo=vue.js&logoColor=2F465A)](https://rubyonrails.org/)
 
-Переписать приложение из [предыдущей лабораторной работы]([../WEB-LAB3](https://github.com/xmnlssv/WEB-LAB3)) с использованием следующих технологий:
+Переписать приложение из [предыдущей лабораторной работы](https://github.com/xmnlssv/WEB-LAB3) с использованием следующих технологий:
 
 - Уровень **back-end** должен быть основан на [Spring](https://spring.io/).
 - Уровень **front-end** должен быть построен на [Vue.js](https://vuejs.org/) с использованием обычных полей ввода HTML
